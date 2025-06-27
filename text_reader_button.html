@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Reader</title>
+</head>
+<body>
+    <h1>Text Content</h1>
+    <p id="text">
+        The quick brown fox jumps over the lazy dog. 
+        She sells seashells by the seashore. 
+        A journey of a thousand miles begins with a single step. 
+        Better late than never. 
+        Actions speak louder than words. 
+        All that glitters is not gold. 
+        Beauty is in the eye of the beholder. 
+        Birds of a feather flock together. 
+        Fortune favors the bold. 
+        Practice makes perfect.
+    </p>
+    <button onclick="readAloud()">Read Aloud</button>
+
+    <script>
+        function readAloud() {
+            const text = document.getElementById('text').innerText;
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
